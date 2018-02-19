@@ -22,7 +22,7 @@ class SupplierController extends Controller
 
 	public function index()
 	{
-		$trans = Transaksi::all(); 
+		$trans = Transaksi::where('kodesupplier',Auth::user()->id); 
 		return view('supplier.index')->with('trans',$trans);
 	}
 
